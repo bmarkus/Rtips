@@ -1,8 +1,6 @@
 # Library Dev
 
 1. https://r-pkgs.org/whole-game.html
-2. using pipe in library dev functions
-   1. https://stackoverflow.com/questions/27947344/r-use-magrittr-pipe-operator-in-self-written-package
 
 # Workflow
 ```R
@@ -47,6 +45,9 @@ https://stackoverflow.com/questions/42813243/insert-markdown-table-in-roxygen2-r
 2. more ...
 
 ## tidyverse
+
+### Using pipe in library functions
+   1. https://stackoverflow.com/questions/27947344/r-use-magrittr-pipe-operator-in-self-written-package
 
 ### No visible binding for global variable
 
