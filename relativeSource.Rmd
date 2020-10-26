@@ -1,0 +1,31 @@
+```{r sourcing R scripts, warning=T}
+# This chunk solves the problem of sourcing with relative path. 
+# this script resided somewhere (not under the R-project dir). When working interactively we would like to get the script path and source the files relative to the script path. When rendering outside Rstudio we should source relative to the script itself which is equivalent to sourcing the script name (i.e. utils.R).
+
+# in this example assume you have an R script utils.R that resides in the same folder as the Rmd (this file). The following will source the R file based on the working session (Rstudio or rendering from cmd-line).
+
+
+# https://stackoverflow.com/questions/47044068/get-the-path-of-current-script/47045368
+getCurrentFileLocation <-  function()
+{
+    this_file <- commandArgs() %>% 
+    tibble::enframe(name = NULL) %>%
+    tidyr::separate(col=value, into=c("key", "value"), sep="=", fill='right') %>%
+    dplyr::filter(key == "--file") %>%
+    dplyr::pull(value)
+    if (length(this_file)==0)
+    {
+      this_file <- rstudioapi::getSourceEditorContext()$path
+    }
+    return(dirname(this_file))
+}
+
+if(rstudioapi::isAvailable()){
+  warning(paste('sourcing relative to: ',getCurrentFileLocation()))
+  source(file.path(getCurrentFileLocation(),'utils.R'))
+}else{
+  warning('sourcing the files relative to Rmd path!')
+  source('utils.R')
+}
+
+```
