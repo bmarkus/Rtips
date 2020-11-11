@@ -36,3 +36,10 @@ anova(null_model, alt_model, test='Chisq') %>%
 # 2    234  31.9     3        13.0   1.74e-20
 # slightly lower p value. Why? 
 
+# LOD score between the models
+# method 1
+n/2*log10(null.rss/alt.rss)
+# 17.62834
+# method 2 (use log lik but convert log scale to 10 base)
+(as.numeric(alt.lik) - as.numeric(null.lik))/log(10)
+# 17.62834
