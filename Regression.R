@@ -17,6 +17,7 @@ pchisq(test_stat, df = null.df-alt.df, lower.tail = FALSE)
 # 1.712318e-17  
 
 # calculate using the redsiduals
+# Broman, Karl W., and Saunak Sen. A Guide to QTL Mapping with R/qtl. Vol. 46. New York: Springer, 2009. (Cp 4.1, Pg77)
 # should be the same as loglik calculations
 # loglik = -n/2Log(RSS)
 alt.rss <- deviance(alt_model)
