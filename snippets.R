@@ -34,3 +34,24 @@ Dmat <- df %>%
 xy <- t(combn(colnames(Dmat), 2))
 Dpw <- data.frame(xy, dist=Dmat[xy]) %>% 
   as_tibble()
+
+# -------------------------------------------------------------------------------------------
+# General Plot Util
+# -----------------
+# library(rlang)
+# https://stackoverflow.com/questions/45439813/pass-function-arguments-to-both-dplyr-and-ggplot
+plotUI <- function(D, X,Y,C=NULL){
+  X <- rlang::sym(X)
+  Y <- rlang::sym(Y)
+  #C <- enquo(C)
+  if (rlang::is_null(C)){
+    ggplot(D, aes(!! X,!! Y, label=FID))+
+      geom_point()
+
+  }else{
+    C <- rlang::sym(C)
+    ggplot(D, aes(!! X,!! Y, color = !!C, label=FID))+
+      geom_point()
+
+  }
+}
