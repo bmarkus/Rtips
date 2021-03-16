@@ -11,3 +11,10 @@ Tips for writing code in R
 ## Documenting
 * Documenting that could be used for manual inspection also: http://r-pkgs.had.co.nz/man.html
   * A combination of @examples tags and R-CMD-CHECK into a report
+
+# Cool links
+* https://github.com/thomasp85
+ * patchwork
+ * gganimate
+ * tidygraph
+ * ggforce 
