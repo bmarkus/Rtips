@@ -14,7 +14,7 @@ Tips for writing code in R
 
 # Cool links
 * https://github.com/thomasp85
- * patchwork
- * gganimate
- * tidygraph
- * ggforce 
+  * patchwork
+  * gganimate
+  * tidygraph
+  * ggforce 
