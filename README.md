@@ -18,3 +18,7 @@ Tips for writing code in R
   * gganimate
   * tidygraph
   * ggforce 
+
+# References
+
+* Rstudio and github: https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r
